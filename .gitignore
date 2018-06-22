@@ -1,0 +1,7 @@
+.gauge
+.idea
+logs
+reports
+*.iml
+target
+gauge_bin
