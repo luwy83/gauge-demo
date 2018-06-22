@@ -8,6 +8,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class DriverFactory {
 
@@ -20,6 +25,12 @@ public class DriverFactory {
         browser = (browser == null) ? "CHROME": browser;
 
         switch (browser) {
+            case "REMOTE-CHROME":
+                try {
+                    return new RemoteWebDriver(new URL("http://krk-lv1rz.bos01.corp.akamai.com:4444/wd/hub"), DesiredCapabilities.chrome());
+                } catch (MalformedURLException e) {
+                    e.printStackTrace();
+                }
             case "IE":
                 InternetExplorerDriverManager.getInstance().setup();
                 return new InternetExplorerDriver();
