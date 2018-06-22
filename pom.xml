@@ -52,6 +52,7 @@
                         <phase>test</phase>
                         <configuration>
                             <specsDir>specs</specsDir>
+                            <env>jenkins</env>
                         </configuration>
                         <goals>
                             <goal>execute</goal>
