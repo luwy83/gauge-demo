@@ -11,7 +11,7 @@ public class StepImplementation {
 
     @Step("Go to Gauge Get Started Page")
     public void gotoGetStartedPage() throws InterruptedException {
-        WebElement getStartedButton = Driver.webDriver.findElement(By.xpath("//a[@class='link-get-started']"));
+        WebElement getStartedButton = Driver.webDriver.findElement(By.xpath("//li[@class='link_getstarted']"));
         getStartedButton.click();
         Gauge.writeMessage("Page title is %s", Driver.webDriver.getTitle());
     }

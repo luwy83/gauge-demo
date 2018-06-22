@@ -26,7 +26,7 @@ public class DriverFactory {
         switch (browser) {
             case "REMOTE-CHROME":
                 try {
-                    return new RemoteWebDriver(new URL("http://krk-lv1rz.bos01.corp.akamai.com:4444/wd/hub"), new ChromeOptions());
+                    return new RemoteWebDriver(new URL("http://172.17.0.2:4444/wd/hub"), new ChromeOptions());
                 } catch (MalformedURLException e) {
                     e.printStackTrace();
                 }
